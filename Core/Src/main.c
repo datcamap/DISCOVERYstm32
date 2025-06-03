@@ -189,14 +189,14 @@ static void MX_TIM6_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim->Instance == TIM6 && htim->Instance->SR)
+	if (htim->Instance == TIM6)
 	{
 		//HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15);
 		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
 		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
 		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-		htim->Instance->SR &= 0x0;
+		//htim->Instance->SR &= 0x0;
 		timetik++;
 	}
 }
